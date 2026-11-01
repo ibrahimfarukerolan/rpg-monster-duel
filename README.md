@@ -1,56 +1,77 @@
-# Welcome to your Expo app 👋
+# RPG Monster Duel ⚔️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Project Description
 
-## Get started
+RPG Monster Duel is a mobile combat game developed with React Native and Expo. The player fights against a randomly selected enemy: Orc, Goblin, or Troll.
 
-1. Install dependencies
+The game uses React hooks, gesture controls, and a round-based combat system.
 
-   ```bash
-   npm install
-   ```
+## Technologies
 
-2. Start the app
+- React Native
+- Expo
+- TypeScript
+- React useState Hook
+- React Native Gesture Handler
+- Expo Audio
+- React Native AppState API
+- AsyncStorage
 
-   ```bash
-   npx expo start
-   ```
+## Game Features
 
-In the output, you'll find options to open the app in a
+- Random enemy selection (Orc, Goblin, or Troll)
+- Round-based combat system
+- Three combat moves: Thrust, Sweep, and Block
+- Gesture-based controls
+- Strength and stamina system
+- Random damage calculation
+- Enemy component with useState
+- Combat sound effects
+- Victory and Defeat screens
+- Automatic game saving with AsyncStorage
+- Background detection using AppState
+- Resume saved combat after reopening the application
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Combat Controls
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Gesture | Action |
+|---|---|
+| Swipe Left | Thrust |
+| Swipe Right | Sweep |
+| Long Press | Block |
 
-## Get a fresh project
+Combat follows rock-paper-scissors rules:
 
-When you're ready, run:
+- Thrust beats Sweep.
+- Sweep beats Block.
+- Block beats Thrust.
+- If both characters choose the same move, the round continues.
+
+## How to Run
+
+1. Install Node.js.
+2. Clone the repository.
+3. Open the project folder.
+4. Install dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+5. Start the application:
 
-### Other setup steps
+```bash
+npx expo start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+6. Scan the QR code using Expo Go on your mobile device.
 
-## Learn more
+## Game Saving
 
-To learn more about developing your project with Expo, look at the following resources:
+The application automatically saves the current combat state using AsyncStorage. When the player closes and reopens the application, the saved fight is restored.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+The AppState API detects when the application goes into the background and pauses the monster's turn until the player returns.
 
-## Join the community
+## Project Purpose
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project was developed for the Development of Hybrid Mobile Applications laboratory to demonstrate state management using React hooks, gesture handling, native APIs, and persistent storage.
